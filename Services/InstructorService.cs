@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Collections.Generic;
 using System.Text;
+using NAVWS;
 
 
 namespace WebApplication1.Services
@@ -52,59 +53,106 @@ namespace WebApplication1.Services
 			try
 			{
 				var client = _credentials.ObjNav();
-				var result = await client.GetInstructorByIdAsync(instructorId); // Replace with actual method name
-				return new InstructorData
+				var result = await client.GetInstructorByIdAsync(instructorId);
+
+				// Debug logging
+				Console.WriteLine($"Raw JSON returned: {result.return_value}");
+
+				if (!string.IsNullOrEmpty(result.return_value))
 				{
-					//Instructor_Name = result.InstructorName,
-					//Instructor_ID = result.InstructorId,
-					//Instructor_Email = result.InstructorEmail,
-					//Instructor_Phone_Number = result.InstructorPhoneNumber,
-					//Instructor_Rate = result.InstructorRate
-				};
+					var settings = new JsonSerializerSettings
+					{
+						Error = (sender, args) =>
+						{
+							Console.WriteLine($"JSON Error: {args.ErrorContext.Error.Message}");
+							args.ErrorContext.Handled = true;
+						},
+						NullValueHandling = NullValueHandling.Ignore,
+						MissingMemberHandling = MissingMemberHandling.Ignore
+					};
+
+					try
+					{
+						var instructor = JsonConvert.DeserializeObject<InstructorData>(result.return_value, settings);
+
+						// Validate the deserialized object
+						if (instructor != null)
+						{
+							Console.WriteLine($"Deserialized Instructor: ID={instructor.Instructor_ID}, Name={instructor.Instructor_Name}");
+							return instructor;
+						}
+					}
+					catch (JsonReaderException jex)
+					{
+						Console.WriteLine($"JSON parsing error: {jex.Message}");
+						throw new Exception($"Invalid JSON format returned from server: {jex.Message}");
+					}
+				}
+
+				throw new Exception($"Instructor with ID {instructorId} not found");
 			}
 			catch (Exception ex)
 			{
-				// Handle not found or other errors as needed
+				Console.WriteLine($"Exception in GetInstructorByIdAsync: {ex.Message}");
 				throw new Exception($"Error fetching instructor: {ex.Message}");
 			}
 		}
+
 
 		public async Task<List<InstructorData>> GetAllInstructorsAsync()
 		{
 			try
 			{
 				var client = _credentials.ObjNav();
-				// Adjust `GetAllInstructorsResult` and its collection name based on generated types
-				var results = await client.GetAllInstructorsAsync();
+				var result = await client.GetAllInstructorsAsync();
 
-				// Initialize the list
-				var instructors = new List<InstructorData>();
+				// Debug logging
+				Console.WriteLine($"Raw JSON returned: {result.return_value}");
 
-				return instructors;
-
-				/*
-				// Ensure `results` is not null and iterate correctly based on your generated structure
-				if (results != null)
+				if (!string.IsNullOrEmpty(result.return_value))
 				{
-					foreach (var instructor in results)
+					var settings = new JsonSerializerSettings
 					{
-						instructors.Add(new InstructorData
+						Error = (sender, args) =>
 						{
-							Instructor_Name = instructor.InstructorName, // Confirm property names
-							Instructor_ID = instructor.InstructorId,
-							Instructor_Email = instructor.InstructorEmail,
-							Instructor_Phone_Number = instructor.InstructorPhoneNumber,
-							Instructor_Rate = instructor.InstructorRate
-						});
-					}
-				} */
+							Console.WriteLine($"JSON Error: {args.ErrorContext.Error.Message}");
+							args.ErrorContext.Handled = true;
+						},
+						NullValueHandling = NullValueHandling.Ignore,
+						MissingMemberHandling = MissingMemberHandling.Ignore
+					};
 
+					try
+					{
+						var instructors = JsonConvert.DeserializeObject<List<InstructorData>>(result.return_value, settings);
+
+						// Debug logging
+						if (instructors != null)
+						{
+							foreach (var instructor in instructors)
+							{
+								Console.WriteLine($"Deserialized Instructor: ID={instructor.Instructor_ID}, Name={instructor.Instructor_Name}");
+							}
+						}
+
+						return instructors ?? new List<InstructorData>();
+					}
+					catch (JsonReaderException jex)
+					{
+						Console.WriteLine($"JSON parsing error: {jex.Message}");
+						throw new Exception($"Invalid JSON format returned from server: {jex.Message}");
+					}
+				}
+
+				return new List<InstructorData>();
 			}
 			catch (Exception ex)
 			{
+				Console.WriteLine($"Exception in GetAllInstructorsAsync: {ex.Message}");
 				throw new Exception($"Error fetching instructors: {ex.Message}");
 			}
 		}
+
 
 		public async Task<string> UpdateInstructorAsync(InstructorData instructor)
 		{
@@ -131,7 +179,7 @@ namespace WebApplication1.Services
 			try
 			{
 				var client = _credentials.ObjNav();
-				await client.DeleteInstructorAsync(instructorId); // Replace with actual method name
+				await client.DeleteInstructorAsync(instructorId);
 				return "Instructor deleted successfully";
 			}
 			catch (Exception ex)
@@ -142,13 +190,22 @@ namespace WebApplication1.Services
 
 	}
 
-	// Your existing InstructorData class
+	// YInstructorData class
 	public class InstructorData
 	{
+		[JsonProperty("instructorName")]
 		public string Instructor_Name { get; set; }
+
+		[JsonProperty("instructorId")]
 		public string Instructor_ID { get; set; }
+
+		[JsonProperty("instructorEmail")]
 		public string Instructor_Email { get; set; }
+
+		[JsonProperty("instructorPhoneNumber")]
 		public string Instructor_Phone_Number { get; set; }
-		public int Instructor_Rate { get; set; }
+
+		[JsonProperty("instructorRate")]
+		public decimal Instructor_Rate { get; set; }
 	}
 }

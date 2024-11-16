@@ -3,16 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\Admin\\source\\repos\\WebApplication1\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{CD7C54C1-FA3B-4CD5-A661-CF3950D55268}|WebApplication1.csproj|c:\\users\\admin\\source\\repos\\webapplication1\\services\\instructorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CD7C54C1-FA3B-4CD5-A661-CF3950D55268}|WebApplication1.csproj|solutionrelative:services\\instructorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CD7C54C1-FA3B-4CD5-A661-CF3950D55268}|WebApplication1.csproj|c:\\users\\admin\\source\\repos\\webapplication1\\connected services\\navws\\reference.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CD7C54C1-FA3B-4CD5-A661-CF3950D55268}|WebApplication1.csproj|solutionrelative:connected services\\navws\\reference.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{CD7C54C1-FA3B-4CD5-A661-CF3950D55268}|WebApplication1.csproj|c:\\users\\admin\\source\\repos\\webapplication1\\controllers\\instrucorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CD7C54C1-FA3B-4CD5-A661-CF3950D55268}|WebApplication1.csproj|solutionrelative:controllers\\instrucorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CD7C54C1-FA3B-4CD5-A661-CF3950D55268}|WebApplication1.csproj|c:\\users\\admin\\source\\repos\\webapplication1\\models\\credentials.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CD7C54C1-FA3B-4CD5-A661-CF3950D55268}|WebApplication1.csproj|solutionrelative:models\\credentials.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CD7C54C1-FA3B-4CD5-A661-CF3950D55268}|WebApplication1.csproj|c:\\users\\admin\\source\\repos\\webapplication1\\services\\instructorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CD7C54C1-FA3B-4CD5-A661-CF3950D55268}|WebApplication1.csproj|solutionrelative:services\\instructorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CD7C54C1-FA3B-4CD5-A661-CF3950D55268}|WebApplication1.csproj|c:\\users\\admin\\source\\repos\\webapplication1\\interfaces\\iinstructor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -30,21 +34,25 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1a46fd64-28d5-434c-8eb3-17a02d419b53}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\WebApplication1\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\Admin\\source\\repos\\WebApplication1\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAcAAAAgMzMzMzMrwAcAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACMAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-12T11:43:48.142Z",
               "IsPinned": true
@@ -52,32 +60,45 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "Reference.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\WebApplication1\\Connected Services\\NAVWS\\Reference.cs",
+              "RelativeDocumentMoniker": "Connected Services\\NAVWS\\Reference.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\WebApplication1\\Connected Services\\NAVWS\\Reference.cs",
+              "RelativeToolTip": "Connected Services\\NAVWS\\Reference.cs",
+              "ViewState": "AgIAAC4AAAAAzMzMzMwQwPoBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-16T20:45:38.581Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "Credentials.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\WebApplication1\\Models\\Credentials.cs",
               "RelativeDocumentMoniker": "Models\\Credentials.cs",
               "ToolTip": "C:\\Users\\Admin\\source\\repos\\WebApplication1\\Models\\Credentials.cs",
               "RelativeToolTip": "Models\\Credentials.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADMAAACVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-13T12:14:41.117Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "InstrucorController.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\WebApplication1\\Controllers\\InstrucorController.cs",
               "RelativeDocumentMoniker": "Controllers\\InstrucorController.cs",
               "ToolTip": "C:\\Users\\Admin\\source\\repos\\WebApplication1\\Controllers\\InstrucorController.cs",
               "RelativeToolTip": "Controllers\\InstrucorController.cs",
-              "ViewState": "AgIAAA8AAACAzMzMzMw7wGoAAAAEAAAAAAAAAA==",
+              "ViewState": "AgIAADQAAAAANDMzMzMpwGoAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-13T11:30:10.199Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "IInstructor.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\WebApplication1\\Interfaces\\IInstructor.cs",
               "RelativeDocumentMoniker": "Interfaces\\IInstructor.cs",
@@ -85,18 +106,17 @@
               "RelativeToolTip": "Interfaces\\IInstructor.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-13T10:53:51.819Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-13T10:53:51.819Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "InstructorService.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\WebApplication1\\Services\\InstructorService.cs",
               "RelativeDocumentMoniker": "Services\\InstructorService.cs",
               "ToolTip": "C:\\Users\\Admin\\source\\repos\\WebApplication1\\Services\\InstructorService.cs",
               "RelativeToolTip": "Services\\InstructorService.cs",
-              "ViewState": "AgIAABAAAADAzMzMzMw6wGQAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-13T05:59:13.879Z",
               "EditorCaption": ""
